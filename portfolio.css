@@ -1,8 +1,3 @@
-                                                                                                                                                                                        /* =============================================
-   TWITCHKOD PORTFOLIO - style.css
-   Clean Modern + Web3 Touch
-   ============================================= */
-
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
 
 /* ---- CSS VARIABLES ---- */
@@ -438,6 +433,17 @@ img { max-width: 100%; display: block; }
   z-index: 1;
 }
 
+.avatar-photo {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--bg-3);
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
 .avatar-badge-web3 {
   position: absolute;
   bottom: 8px;
@@ -805,6 +811,161 @@ img { max-width: 100%; display: block; }
   gap: 12px;
 }
 
+/* ---- DESIGN WORK ---- */
+.design-work {
+  background: var(--bg-2, var(--surface));
+}
+
+.design-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.design-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.design-card:hover {
+  border-color: var(--border-accent);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-accent);
+}
+
+.design-img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+.design-caption {
+  padding: 16px 18px;
+}
+
+.design-brand {
+  font-family: var(--font-head);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.design-caption p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ---- PROJECTS ---- */
+.projects {
+  background: var(--bg);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  border-color: var(--border-accent);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-accent);
+}
+
+.project-img-link {
+  display: block;
+  width: 100%;
+  height: 170px;
+  overflow: hidden;
+  background: var(--bg-3);
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.05);
+}
+
+.project-body {
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.project-body h3 {
+  font-family: var(--font-head);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+
+.project-body p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+.project-role {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.project-role .result-label {
+  margin-bottom: 4px;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.tech-tag {
+  background: var(--accent-2-glow);
+  color: var(--accent-2);
+  border: 1px solid rgba(123, 97, 255, 0.2);
+  font-family: var(--font-head);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 50px;
+  letter-spacing: 0.04em;
+}
+
+.project-body .portfolio-link {
+  margin-top: auto;
+}
+
 /* ---- ACHIEVEMENTS ---- */
 .achievements {
   background: var(--bg);
@@ -815,6 +976,12 @@ img { max-width: 100%; display: block; }
   grid-template-columns: 1fr 1fr;
   gap: 48px;
   align-items: start;
+}
+
+.cert-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 /* Certificate Card */
@@ -1193,6 +1360,14 @@ img { max-width: 100%; display: block; }
     grid-template-columns: 1fr;
   }
 
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .design-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .about-grid { gap: 40px; }
   .contact-grid { gap: 40px; }
 
@@ -1231,7 +1406,9 @@ img { max-width: 100%; display: block; }
   .hero-name { font-size: 2.4rem; }
 
   .services-grid,
-  .portfolio-grid {
+  .portfolio-grid,
+  .projects-grid,
+  .design-grid {
     grid-template-columns: 1fr;
   }
 
